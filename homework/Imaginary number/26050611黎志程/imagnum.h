@@ -1,6 +1,7 @@
 //accomplishing imaginary number operations by overload
 #ifndef IMAGNUM_H_
 #define IMAGNUM_H_
+#include <string>
 
 class Complex{
 public:
