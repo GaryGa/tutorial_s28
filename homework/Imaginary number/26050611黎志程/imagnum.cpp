@@ -21,7 +21,7 @@ Complex Complex::operator+(const Complex& c)const{
     tempImag = c.imagNum_ + imagNum_;
     tempReal = c.realNum_ + realNum_;
     Complex tempComp(tempImag, tempReal);
-    
+
     return tempComp;
 }
 
@@ -30,6 +30,6 @@ Complex Complex::operator-(const Complex& c)const{
     tempImag = c.imagNum_ - imagNum_;
     tempReal = c.realNum_ - realNum_;
     Complex tempComp(tempImag, tempReal);
-    
+
     return tempComp;
 }
