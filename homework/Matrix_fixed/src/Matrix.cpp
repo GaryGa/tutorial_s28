@@ -11,7 +11,7 @@
 // 作业模板 main.cpp 里的注释是按从 1 开始写的，这里以实际代码为准。
 //
 // 注：该文件Matrix_fixed由ai优化生成，可不着重看。
-// 2026.11.16
+// 2026.11.26
 #include "Matrix.hpp"
 #include <iostream>
 #include <cmath>
