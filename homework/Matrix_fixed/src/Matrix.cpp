@@ -9,6 +9,9 @@
 // 下标约定（hamocat补充）：本实现中行、列下标统一从 0 开始，
 // 即 get(0, 0) / m(0, 0) 是左上角元素，get(rows_ - 1, cols_ - 1) 是右下角元素。
 // 作业模板 main.cpp 里的注释是按从 1 开始写的，这里以实际代码为准。
+//
+// 注：该文件Matrix_fixed由ai优化生成，可不着重看。
+// 2026.11.16
 #include "Matrix.hpp"
 #include <iostream>
 #include <cmath>

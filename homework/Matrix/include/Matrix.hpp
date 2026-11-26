@@ -1,3 +1,9 @@
+// C++作业，矩阵类的实现 头文件
+// (edit)author: hamocat (github: GaryGa)
+// 关注永雏塔菲谢谢喵
+// 对某些类型和参数做了必要的修改，并新增了必要的成员函数。
+// 由于原版类未提供足够参数，重载运算符<<向矩阵输入无法实现。
+// 2026.11.23
 #ifndef MATRIX_HPP
 #define MATRIX_HPP
 
@@ -51,8 +57,10 @@ public:
 
     // 矩阵加法
     Matrix add(const Matrix &other) const;
-    // 矩阵乘法
-    Matrix multiply(const Matrix &other) const;
+    // 矩阵减法（hamocat）
+    Matrix minus(const Matrix &other) const;
+    // 矩阵点积
+    Matrix dotProduct(const Matrix &other) const;
     // 矩阵转置
     Matrix transpose() const;
     // 矩阵是否为方阵
@@ -65,18 +73,21 @@ public:
     Matrix inverse() const;
 
     // 重载运算符 + - * / = == !=, 实现矩阵的加减乘除赋值比较
-    Matrix operator+(const Matrix &other) const;
-    Matrix operator-(const Matrix &other) const;
-    Matrix operator-() const;
-    Matrix operator*(const Matrix &other) const;
+    friend Matrix operator+(const Matrix &thisMat,const Matrix &other);
+    friend Matrix operator-(const Matrix &thisMat,const Matrix &other);
+    friend Matrix operator-(const Matrix &thisMat);
+    friend Matrix operator*(const Matrix &thisMat, const Matrix &other);
+    friend Matrix operator*(const Matrix &thisMat, double num);
+    friend Matrix operator*(double num, const Matrix &thisMat);
     Matrix operator/(const Matrix &other) const;
+    friend Matrix operator/(const Matrix &thisMat, double num);
     Matrix &operator=(const Matrix &other); // 拷贝赋值
     Matrix &operator=(Matrix &&other); // 移动赋值，思考和拷贝赋值的区别
     bool operator==(const Matrix &other) const;
     bool operator!=(const Matrix &other) const;
     // 重载运算符 ()，实现矩阵的访问
-    int operator()(int row, int col) const;
-    int &operator()(int row, int col);
+    double operator()(int row, int col) const;
+    double &operator()(int row, int col);
     // 重载运算符 <<，实现矩阵的输入，如：Matrix m(2, 2); m << 1, 2, 3, 4;
     Matrix &operator<<(double value);
 
